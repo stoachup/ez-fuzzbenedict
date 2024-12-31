@@ -1,0 +1,28 @@
+[project]
+name = "ez_fuzzbenedict"
+version = "0.1.0"
+description = "A Python Benedict extension to include fuzzy logic for matching keys (using keypaths)"
+readme = "README.md"
+authors = [
+    { name = "Christophe Druet", email = "christophe.druet@entsoe.eu" }
+]
+requires-python = ">=3.10"
+dependencies = [
+    "python-benedict>=0.34.0",
+    "rapidfuzz>=3.11.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3.4",
+    "pytest-cov>=6.0.0",
+    "pytest-sugar>=1.0.0",
+    "ruff>=0.8.4",
+]
+
+[tool.pytest.ini_options]
+addopts = "--cov=ez_fuzzbenedict --cov-report=term-missing"
